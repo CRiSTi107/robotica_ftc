@@ -86,18 +86,27 @@ public class PushbotAutoDriveByTime_Linear extends LinearOpMode {
 
         // Step through each leg of the path, ensuring that the Auto mode has not been stopped along the way
 
-        /*// Step 1:  Drive forward for 3 seconds
-        robot.leftDrive.setPower(FORWARD_SPEED);
-        robot.rightDrive.setPower(FORWARD_SPEED);
+        // Step 1:  Drive forward for 3 seconds
+        robot.leftForward.setPower(FORWARD_SPEED);
+        robot.leftBack.setPower(FORWARD_SPEED);
+
+        robot.rightForward.setPower(FORWARD_SPEED);
+        robot.rightBack.setPower(FORWARD_SPEED);
+
         runtime.reset();
         while (opModeIsActive() && (runtime.seconds() < 3.0)) {
             telemetry.addData("Path", "Leg 1: %2.5f S Elapsed", runtime.seconds());
             telemetry.update();
         }
 
+
         // Step 2:  Spin right for 1.3 seconds
-        robot.leftDrive.setPower(TURN_SPEED);
-        robot.rightDrive.setPower(-TURN_SPEED);
+        robot.leftForward.setPower(TURN_SPEED);
+        robot.leftBack.setPower(TURN_SPEED);
+
+        robot.rightForward.setPower(TURN_SPEED);
+        robot.rightBack.setPower(TURN_SPEED);
+
         runtime.reset();
         while (opModeIsActive() && (runtime.seconds() < 1.3)) {
             telemetry.addData("Path", "Leg 2: %2.5f S Elapsed", runtime.seconds());
@@ -105,8 +114,12 @@ public class PushbotAutoDriveByTime_Linear extends LinearOpMode {
         }
 
         // Step 3:  Drive Backwards for 1 Second
-        robot.leftDrive.setPower(-FORWARD_SPEED);
-        robot.rightDrive.setPower(-FORWARD_SPEED);
+        robot.leftForward.setPower(-FORWARD_SPEED);
+        robot.leftBack.setPower(-FORWARD_SPEED);
+
+        robot.rightForward.setPower(-FORWARD_SPEED);
+        robot.rightBack.setPower(-FORWARD_SPEED);
+
         runtime.reset();
         while (opModeIsActive() && (runtime.seconds() < 1.0)) {
             telemetry.addData("Path", "Leg 3: %2.5f S Elapsed", runtime.seconds());
@@ -114,13 +127,18 @@ public class PushbotAutoDriveByTime_Linear extends LinearOpMode {
         }
 
         // Step 4:  Stop and close the claw.
-        robot.leftDrive.setPower(0);
-        robot.rightDrive.setPower(0);
-        robot.leftClaw.setPosition(1.0);
-        robot.rightClaw.setPosition(0.0);
+        robot.rightForward.setPower(0);
+        robot.rightBack.setPower(0);
+
+        robot.leftForward.setPower(0);
+        robot.leftBack.setPower(0);
+
+
+        // robot.leftForward.setPosition(0.0);
+        // robot.leftBack.setPosition(0.0);
 
         telemetry.addData("Path", "Complete");
         telemetry.update();
-        sleep(1000);*/
+        sleep(1000);
     }
 }
