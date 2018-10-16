@@ -107,5 +107,15 @@ public class HardwarePushbot
         //leftClaw.setPosition(MID_SERVO);
         //rightClaw.setPosition(MID_SERVO);
     }
+
+    public void setLeft(double speed){
+        leftBack.setPower(speed);
+        leftForward.setPower(speed);
+    }
+
+    public void setRight(double speed){
+        rightBack.setPower(speed);
+        rightForward.setPower(speed);
+    }
  }
 
